@@ -3,6 +3,7 @@ import BestScore from "./BestScore/BestScore";
 import UserRank from "./UserRank/UserRank";
 import "./RankPage.scss";
 import { IUser } from "../../@types";
+import { apiRequest } from "../utils/api";
 
 export const calculPoint = (user: IUser) => {
 	let totalPoint = 0;
@@ -37,7 +38,7 @@ export const RankPage = () => {
 	useEffect(() => {
 		const getUsers = async () => {
 			try {
-				const res = await fetch("http://localhost:3000/api/users");
+				const res = await apiRequest("/users", "GET");
 				const data = await res.json();
 
 				setUsers(data);

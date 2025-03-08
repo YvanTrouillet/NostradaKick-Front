@@ -9,14 +9,6 @@ interface SearchProps {
 }
 
 export const Search = ({ className, filteredValue, setFilteredValue }: SearchProps) => {
-	
-	/* const [datas,setDatas] = useState([]); */
-		
-// useEffect(()=>{
-// 	fetch("http://localhost:3000/api/predictions")
-// 	.then(response => response.json())
-// 	.then(json => console.log(json));
-// 	},[])
 
 
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { IUser } from "../@types";
+import { apiRequest } from "../components/utils/api";
 
 export const useUserData = () => {
 	const [user, setUser] = useState<IUser>();
@@ -15,20 +16,11 @@ export const useUserData = () => {
 				if (!token) {
 					throw new Error("Le Token n'a pas été trouvé");
 				}
-				const response = await fetch("http://localhost:3000/api/users/profil", {
-					method: "GET",
-					headers: {
-						Authorization: `Bearer ${token}`, // Ajouter le token dans le header Authorization
-					},
-				});
+				const res = await apiRequest("/users/profil", "GET")
 
-				if (!response.ok) {
-					throw new Error("Aucune donnée n'a été trouvée");
-				}
-				const data = await response.json();
 				// Vérifier si le composant est toujours monté
 				if (isMounted) {
-					setUser(data);
+					setUser(res);
 					// Déplacer le console.log ici pour voir uniquement les données reçues
 				}
 			} catch (error) {
