@@ -244,9 +244,9 @@ export default function Signup() {
 
 					<p className="registrePage__registreCard__existingAccount">
 						Vous avez déja un compte?{" "}
-						<a href="/login" className="link">
+						<Link to="/login" className="link">
 							Connecter-vous
-						</a>
+						</Link>
 					</p>
 
 					<br />
