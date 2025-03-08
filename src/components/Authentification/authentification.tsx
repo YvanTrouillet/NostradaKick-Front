@@ -71,9 +71,9 @@ export default function Auth() {
 						Se connecter
 					</button>
 
-					<a href="/signup" className="loginPage__loginCard__CreateAccount">
+					<Link to="/signup" className="loginPage__loginCard__CreateAccount">
 						Créer un compte
-					</a>
+					</Link>
 
 					<p className="loginPage__loginCard__terms">
 						En poursuivant, vous acceptez les conditions générales d'utilisation

@@ -39,9 +39,8 @@ export const RankPage = () => {
 		const getUsers = async () => {
 			try {
 				const res = await apiRequest("/users", "GET");
-				const data = await res.json();
 
-				setUsers(data);
+				setUsers(res);
 			} catch (error) {
 				console.error(error);
 			}
