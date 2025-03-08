@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# NostradaKick - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 Présentation du projet
 
-Currently, two official plugins are available:
+**NostradaKick** est une plateforme web dédiée aux passionnés de football qui permet aux utilisateurs de faire des pronostics gratuits sur les matchs et de défier leurs amis, collègues ou d'autres supporters à travers des ligues privées et un classement général.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Fonctionnalités principales
 
-## Expanding the ESLint configuration
+- **Page d'accueil** : Affichage des prédictions en vedette et des prochains matchs.
+- **Système d'authentification** : Inscription et connexion sécurisées.
+- **Recherche d'équipe** : Trouver les matchs d'une équipe spécifique.
+- **Publication de pronostics** : Enregistrer ses prédictions pour chaque match.
+- **Tableau de bord personnel** : Suivi des points gagnés et des prédictions réalisées.
+- **Classements** : Visualisation du classement général et des ligues privées.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Technologies utilisées
 
-- Configure the top-level `parserOptions` property like this:
+- **React** : Pour une interface utilisateur réactive et fluide (SPA).
+- **React Router** : Gestion des différentes pages et routes de l'application.
+- **TailwindCSS** : Pour un design moderne et rapide.
+- **Axios** : Communication avec l'API backend.
+- **Redux Toolkit** : Gestion de l'état global de l'application.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📧 Contact
+Pour toute question, merci de contacter l'équipe :
+- Guillaume
+- Abdelhak
+- Abdel
+- Yvan
+- Fabien
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+**NostradaKick** ⚽ — Fait par des passionnés, pour des passionnés.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
