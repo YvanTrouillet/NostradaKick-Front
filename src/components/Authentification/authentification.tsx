@@ -11,7 +11,7 @@ export default function Auth() {
 		try {
 			// Login et récupération du Token JWT
 			const data = await apiRequest("/signin", "POST", user);
-			// Enregictrement du Token
+			// Enregistrement du Token
 			localStorage.setItem("jwt", data.token);
 
 			// Redirection
