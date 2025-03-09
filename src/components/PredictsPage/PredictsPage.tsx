@@ -23,6 +23,24 @@ export const PredictsPage = () => {
 
 		fetchData();
 	}, []);
+	// ligue 1 :id : 4334
+	// r = journée de la ligue 1
+	// s = saison
+	useEffect(() => {
+		const fetchMatch = async () => {			
+			try {
+				const res = await fetch(`https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4334&r=30&s=2024-2025`);
+				const data = await res.json();	
+				console.log(data.events);
+								
+			} catch (error) {
+				console.error(error);
+				return [];
+			}
+		}
+		fetchMatch();
+		
+	},[])
 
 	// Trier les débuts de matchs par ordre croissant
 	const sortedMatchs = matchs.sort((a, b) => a.date.localeCompare(b.date));

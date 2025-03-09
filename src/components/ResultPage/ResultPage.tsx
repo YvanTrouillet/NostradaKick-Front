@@ -64,18 +64,18 @@ export const ResultPage = () => {
 	const calendar = () => {
 		const daysOfWeek = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
 		const daysOfMonth = [
-			"Janvier",
-			"Février",
-			"Mars",
-			"Avril",
-			"Mai",
-			"Juin",
-			"Juillet",
-			"Août",
-			"Septembre",
-			"Octobre",
-			"Novembre",
-			"Décembre",
+			'January',
+			'February',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'August',
+			'September',
+			'October',
+			'November',
+			'December',
 		];
 		const date = new Date();
 		const currentDate = date.getDate();
@@ -118,12 +118,12 @@ export const ResultPage = () => {
 
 	const dateMatch = calendar();
 	
-
-	const newMatchs = matchs.filter((match) => {
-		return Number(dayjs(match.date).format("D")) === ActiveDate?.date;
+	
+	const newMatchs = matchs.filter((match) => {		
+		return Number(dayjs(match.date).format("D")) === ActiveDate?.date && Number(dayjs(match.date).format("YYYY")) === ActiveDate?.year && dayjs(match.date).format("MMMM") === ActiveDate?.month;
 	});
 
-
+	
 	return (
 		<div className="result">
 			<h1 className="result__title">Résultats</h1>

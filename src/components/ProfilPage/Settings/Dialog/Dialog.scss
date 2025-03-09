@@ -1,0 +1,61 @@
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    align-content: center;
+    padding: 0 3rem;
+
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    background-color: #0D1F3C;
+    border: none;
+    outline: 1px solid #FEFFED;
+    box-shadow: inset 0px 0px 20px rgba(0, 2, 17, 0.82);
+
+    color: #FEFFED;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        padding: 5px; 
+        z-index: -1; /* Placer la bordure derrière le contenu */
+
+        border-radius: inherit; /* Hériter du border-radius du parent */
+        background: linear-gradient(45deg, #0D1F3C, #FEFFED, #0D1F3C);
+            
+        // Mask pour le contour en dégradé
+        mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+
+        -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+
+    }
+
+    &::backdrop {
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: rgba(0, 0, 0, 0.247);
+        z-index: -1;
+
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+}

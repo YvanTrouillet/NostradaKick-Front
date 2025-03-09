@@ -1,0 +1,102 @@
+.deleteProfil {
+    width: 600px;
+    height: 416px;
+    padding:3rem 0 3rem 3rem;
+
+    margin-bottom: 1rem;
+
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        padding-left: 1px; 
+        z-index: -1; /* Placer la bordure derrière le contenu */
+
+        border-radius: inherit; /* Hériter du border-radius du parent */
+        background: linear-gradient(0deg, #0D1F3C, #FEFFED, #0D1F3C);
+            
+        // Mask pour le contour en dégradé
+        mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+
+        -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+
+    }
+
+    &__lock {
+        display: block;
+        padding: 0.5rem 2rem;
+        margin-bottom: 1rem;
+        border-radius: 0.3rem;
+        outline: 1px solid #F1473B;
+        background-color: transparent;
+        color: #F1473B;
+        border: none;
+        cursor: pointer;
+        transition: 300ms;
+
+        &:hover {
+            background-color: #F1473B;
+            color: #FEFFED;
+            outline: none;
+        }
+
+    }
+    &__delete {
+        display: block;
+        padding: 0.5rem 2rem;
+        margin-bottom: 1rem;
+        border-radius: 0.3rem;
+        background-color: #F1473B;
+        color: #FEFFED;
+        
+        border: none;
+        cursor: pointer;
+        transition: 300ms;
+
+        &:hover {
+            background-color: transparent;
+            outline: 1px solid #F1473B;
+            color: #F1473B;
+        }
+
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .deleteProfil{
+        position: relative;
+
+    &::before {
+        padding-top: 1px;
+        padding-left: 0px; 
+
+        background: linear-gradient(90deg, #0D1F3C, #FEFFED, #0D1F3C);
+
+    }
+
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .deleteProfil{
+        flex-direction:column-reverse;
+        width: 100%;
+        padding: 2rem 0 6rem 0;
+
+    }
+    
+}
