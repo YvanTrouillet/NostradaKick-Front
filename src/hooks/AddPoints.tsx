@@ -41,7 +41,7 @@ const useAddPoints = ({
 		);
 		const matchResult = Math.sign(match.score_home - match.score_away);
 
-		if (predictResult === matchResult) {
+		if (predictResult === matchResult && match.score_home !== null && match.score_away !== null) {
 			data.points_outcome = 1;
 		}
 

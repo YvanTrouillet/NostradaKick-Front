@@ -11,7 +11,8 @@ const MyPredictCard = ({ match }: { match: IMatch }) => {
 	const { user } = useUserData();
 	const [isMatchEnd, setIsMatchEnd] = useState(false);
 
-	useEffect(() => {	
+	useEffect(() => {
+	
 		const checkMatchEnd = () => {
 			const date = dayjs(match.date);
 			const dateSecond = date.diff(dayjs(), "second");
