@@ -30,7 +30,7 @@ const MyPredict = () => {
 		}
 	);
 
-	if (!scorePredict) return null;
+	if (!scorePredict) return [];
 	
 	const sortedMatchs = scorePredict?.sort((a, b) => a.date.localeCompare(b.date));
 
