@@ -30,16 +30,6 @@ const Input = ({ name, value = "", onChange }: InputProps) => {
 				onKeyDown={handleKeyDown}
 				maxLength={2}
 			/>
-			<button
-				type="button"
-				className="predictCard__containerPredict__input__edit"
-			>
-				<img
-					src={iconEdit}
-					alt=""
-					className="predictCard__containerPredict__input__edit__icon"
-				/>
-			</button>
 		</div>
 	);
 };
