@@ -13,6 +13,7 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        overflow: scroll;
 
         &__hover {
             transform: scale(1.3);
